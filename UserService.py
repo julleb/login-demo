@@ -5,6 +5,7 @@ import random
 from psycopg2 import IntegrityError
 import hashlib
 
+#TODO: Prepared statements to db.
 class UserService:
 
 	def __init__(self):
