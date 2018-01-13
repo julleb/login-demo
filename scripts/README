@@ -1,0 +1,31 @@
+psql -i -u postgres
+sudo -u postgres psql
+
+
+\l     list all dbs
+
+\dt             current tables in db
+
+
+\c db_name      connecta till db
+
+
+sudo service postgresql restart
+
+
+drop database namn
+create database namn
+
+
+
+
+
+create table users (
+uid int PRIMARY KEY,
+username varchar(50),
+avatar_url varchar(200),
+name varchar(100)
+);
+
+
+insert into users(uid, username, avatar_url, name) values(1, 'lola', 'www.fragbite.se', 'Lola Hansson');

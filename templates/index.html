@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+	<h1> WELCOME </h1>
+	{% if session["username"] %}
+		<p>You are logged in as {{session["username"]}}</p>
+		<form action="/logout" method="post">
+			<input type="submit" value="logout"> 
+		</form>
+	{%else%}
+		<p> You are not logged in</p>
+		<form action="/login" method="get">
+			<input type="submit" value="login">
+		</form>
+	{% endif %}
+</body>
+
+</html>
