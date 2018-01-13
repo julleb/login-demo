@@ -31,9 +31,7 @@ class UserService:
 		return str(salt);
 
 	def hash(self, string_to_hash):
-		#TODO real implementation
 		hashed_string = hashlib.sha256(string_to_hash);
-		print(hashed_string.hexdigest());
 		return hashed_string.hexdigest();
 
 	def get_user(self, username, password): 
