@@ -28,4 +28,4 @@ name varchar(100)
 );
 
 
-insert into users(uid, username, avatar_url, name) values(1, 'lola', 'www.fragbite.se', 'Lola Hansson');
+insert into users(uid, username, avatar_url, name) values(1, 'lola', 'www.test.se', 'Lola');
