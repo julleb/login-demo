@@ -1,6 +1,8 @@
 from flask import Flask, redirect, url_for, session, request, render_template, send_file
 from UserService import UserService
 
+## TODO: enforce HTTPS
+
 app = Flask(__name__)
 app.debug=True
 app.secret_key = "jahdkajhdkahkdh";
