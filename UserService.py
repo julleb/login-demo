@@ -38,19 +38,14 @@ class UserService:
 		query = "SELECT * FROM "+ self.table_name + " WHERE username=%s";	
 		self.getQuerier().execute(query, [username])
 		result = self.getQuerier().fetchall();		
-		salt = "";
 		for r in result:
 			salt = r["salt"];
+			correct_password = r["password"];
+			password_and_salt = password + salt;
+			hashed_password = self.hash(password_and_salt);
+			if hashed_password == correct_password:
+				return username;
 			break;
-		password_and_salt = password + salt;
-		hashed_password = self.hash(password_and_salt);
-		query = "SELECT * FROM "+ self.table_name + " WHERE username=%s AND password=%s";
-		self.getQuerier().execute(query, [username, hashed_password])
-		result = self.getQuerier().fetchall();
-		print result
-		for r in result:
-			return r["username"]; 
-
 		raise Exception("Username or password is not correct");
 
 	
